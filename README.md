@@ -2,23 +2,30 @@
 
 > 让 AI 从「找到一个看起来对的答案就交差」,变成「造一个经得起反驳的结论」——更准、更省、更诚实。
 
-[English README](README.en.md) · 界面语言:中文(主) / English
+[English README](README.en.md)
 
 ![Agent Skill](https://img.shields.io/badge/Agent-Skill-d98e3a)
 ![Pure Methodology](https://img.shields.io/badge/Pure-Methodology-2b2622)
 ![Platforms](https://img.shields.io/badge/Claude_Code_·_Codex_·_Gemini_CLI-supported-2f5ea7)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-4c9a2a)](LICENSE)
 
-<table>
-  <tr>
-    <td width="50%"><img src="assets/screenshots/investigation-workflow.svg" alt="七步调查循环"></td>
-    <td width="50%"><img src="assets/screenshots/claim-confidence.svg" alt="四级确定性分级"></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>调查不是检索:七步循环,该停就停</strong></td>
-    <td align="center"><strong>诚实标注确定性:已确证 / 很可能 / 推测 / 未知</strong></td>
-  </tr>
-</table>
+```mermaid
+flowchart LR
+  A["1 · 界定拆解"] --> B["2 · 铺开摸底"] --> C["3 · 追一手源"] --> D["4 · 独立交叉"] --> E["5 · 主动证伪"]
+  E --> F["6 · 缺口迭代"] --> G["7 · 分级结论"]
+  F -. 没到停止条件就回炉 .-> B
+```
+
+> **七步调查循环:调查不是检索,该停就停。** 两个最该盯的——**主动证伪**(拼命找证据证明自己错)和**该停就停**(收敛了就停,别把海洋煮干)。
+
+**每条结论都诚实标确定性:**
+
+| 等级 | 什么时候用 |
+|---|---|
+| 🟢 **已确证** | ≥2 个真正独立的一手源一致,且反证没能推翻 |
+| 🟡 **很可能** | 证据扎实,但独立印证或某个边界还没做完 |
+| 🟠 **推测** | 只有推理或间接证据,替代解释还没排除 |
+| ⚪ **未知** | 证据不足以判断——如实说,而不是猜一个 |
 
 ## TL;DR · 一句话结论
 
@@ -103,8 +110,7 @@ blcaptain-research-driven/
 ├── .gitignore                       # 防止凭据、日志、本机文件误提交
 ├── agents/interface.yaml            # Agent 展示信息
 ├── assets/
-│   ├── research-log-template.md     # 可选:研究记录模板
-│   └── screenshots/                 # 公开配图
+│   └── research-log-template.md     # 可选:研究记录模板
 ├── references/
 │   ├── techniques.md                # 深度技巧:拆解 / 一手源 / 交叉 / 证伪 / 停止
 │   └── tool-mapping.md              # 三平台能力映射

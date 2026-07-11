@@ -2,23 +2,30 @@
 
 > Move an AI agent from "hand over the first plausible answer" to "construct a conclusion that survives attack" — more correct, more economical, more honest.
 
-[中文 README](README.md) · Interface language: 中文 (primary) / English
+[中文 README](README.md)
 
 ![Agent Skill](https://img.shields.io/badge/Agent-Skill-d98e3a)
 ![Pure Methodology](https://img.shields.io/badge/Pure-Methodology-2b2622)
 ![Platforms](https://img.shields.io/badge/Claude_Code_·_Codex_·_Gemini_CLI-supported-2f5ea7)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-4c9a2a)](LICENSE)
 
-<table>
-  <tr>
-    <td width="50%"><img src="assets/screenshots/investigation-workflow.svg" alt="Seven-step investigation loop"></td>
-    <td width="50%"><img src="assets/screenshots/claim-confidence.svg" alt="Four certainty grades"></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Investigate, don't retrieve: a 7-step loop that knows when to stop</strong></td>
-    <td align="center"><strong>Grade certainty honestly: Confirmed / Probable / Speculative / Unknown</strong></td>
-  </tr>
-</table>
+```mermaid
+flowchart LR
+  A["1 · Frame"] --> B["2 · Survey"] --> C["3 · Trace to source"] --> D["4 · Cross-verify"] --> E["5 · Disprove"]
+  E --> F["6 · Gaps & iterate"] --> G["7 · Graded conclusion"]
+  F -. loop back until stop rules hold .-> B
+```
+
+> **The seven-step investigation loop — investigate, don't retrieve, and know when to stop.** The two moves to watch: **disconfirmation** (hunt for evidence you're wrong) and **stopping** (stop at convergence, don't boil the ocean).
+
+**Every conclusion carries a certainty grade:**
+
+| Grade | When to assign |
+|---|---|
+| 🟢 **Confirmed** | ≥2 genuinely independent primary sources agree, and disconfirmation didn't break it |
+| 🟡 **Probable** | Solid evidence, but independent corroboration or a boundary test is incomplete |
+| 🟠 **Speculative** | Only reasoning or indirect evidence; alternatives not ruled out |
+| ⚪ **Unknown** | Not enough evidence to judge — say so instead of guessing |
 
 ## TL;DR
 
@@ -103,8 +110,7 @@ blcaptain-research-driven/
 ├── .gitignore                       # Keeps credentials, logs, local files out
 ├── agents/interface.yaml            # Agent display metadata
 ├── assets/
-│   ├── research-log-template.md     # Optional research-log template
-│   └── screenshots/                 # Public illustrations
+│   └── research-log-template.md     # Optional research-log template
 ├── references/
 │   ├── techniques.md                # Decomposition / sources / cross-verify / disprove / stop
 │   └── tool-mapping.md              # Capability map across three platforms
