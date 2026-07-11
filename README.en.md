@@ -30,7 +30,7 @@ It is a **pure-methodology skill**: no scripts, no dependencies, it never touche
 
 Agents produce fluent answers fast, but they have three costly failure modes you've probably hit:
 
-1. **They are most dangerous when they sound most sure.** The real trap isn't "I don't know" (it will search) — it's "I think I know." The more confident the error, the less it gets checked.
+1. **They're most dangerous exactly when they sound most sure.** You ask "is this API still supported?" or "are these two versions compatible?" — it answers with total confidence, you act on it, and it's wrong or long out of date. It's not "I don't know" (it would search) — it's "I think I know," and the more confident it is, the less it checks.
 2. **Effort is mis-allocated.** They over-research trivial facts (burning tokens) and glance past the load-bearing claim (planting a landmine).
 3. **They mistake echoes for confirmation.** Ten pages repeating one wrong source read as "independently confirmed"; inference gets written as fact; the model's confidence gets treated as evidence.
 
@@ -64,7 +64,7 @@ In one line: **treat a plausible answer as the START of inquiry, not the end.**
 ## What it gives you
 
 - **More correct.** Disconfirmation + independent cross-verification + primary sources keep confident-wrong answers out of the output.
-- **More economical — the counter-intuitive, valuable part.** It doesn't save the handful of tokens on searching; it saves **the most expensive path: trusting a wrong answer → making a wrong decision → redoing the work.** And it matches effort to stakes: skip the trivial, deepen only the load-bearing, stop at convergence — no boiling the ocean. **Getting it right the first time is the real saving.**
+- **More economical.** Not the handful of tokens on searching — it saves the most expensive path: you trust a wrong answer, build on it, find out it's broken, and redo everything. It also spends effort by importance: skip the trivial, go deep only on what matters, stop when it's enough. **Getting it right the first time is the real saving.**
 - **More honest.** Every conclusion is tagged Confirmed / Probable / Speculative / Unknown (right image). A labeled "Unknown" beats a confident wrong answer.
 
 ## Limits · no overselling
