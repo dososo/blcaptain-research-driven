@@ -1,4 +1,4 @@
-# Research-Driven · 研究驱动式调查
+# BLCaptain-Research-Driven · 研究驱动式调查
 
 > 让 AI 从「找到一个看起来对的答案就交差」,变成「造一个经得起反驳的结论」——更准、更省、更诚实。
 

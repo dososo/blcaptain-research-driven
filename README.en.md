@@ -1,4 +1,4 @@
-# Research-Driven Investigation
+# BLCaptain-Research-Driven Investigation
 
 > Move an AI agent from "hand over the first plausible answer" to "construct a conclusion that survives attack" — more correct, more economical, more honest.
 
