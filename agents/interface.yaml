@@ -1,0 +1,3 @@
+display_name: "Research-Driven 调查式研究"
+short_description: "用一手来源、主动证伪和确定性等级做调查式研究"
+default_prompt: "使用 blcaptain-research-driven 调查这个问题：先拆解、查一手来源、主动找反证，并给出边界和确定性等级。"
